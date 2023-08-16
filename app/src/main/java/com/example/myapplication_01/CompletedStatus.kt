@@ -8,4 +8,5 @@ class CompletedStatus(private val viewModel: TimerViewModel) : IStatus {
     override fun stopButtonEnabled() = false
     override fun clickStopButton() {}
     override fun showEditText() = true
+    override fun progressSweepAngle() = 0f
 }

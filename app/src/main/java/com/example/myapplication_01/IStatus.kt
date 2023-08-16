@@ -22,4 +22,7 @@ interface IStatus {
      * Show or hide EditText
      */
     fun showEditText(): Boolean
+
+    fun progressSweepAngle(): Float
+
 }
