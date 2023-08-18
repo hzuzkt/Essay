@@ -94,6 +94,7 @@ fun MyApp() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            CompletedText(viewModel)
             TimeLeftText(viewModel)
             ProgressCircle(viewModel)
             EditText(viewModel)
@@ -224,5 +225,12 @@ fun ProgressCircle(viewModel: TimerViewModel) {
         }
     }
 
+}
 
+@Composable
+private fun CompletedText(viewModel: TimerViewModel) {
+    Text(
+        text = viewModel.status.completedString(),
+        color = MaterialTheme.colorScheme.primary
+    )
 }

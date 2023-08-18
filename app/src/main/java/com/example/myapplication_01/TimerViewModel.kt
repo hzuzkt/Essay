@@ -3,6 +3,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import com.example.myapplication_01.CompletedStatus
 import com.example.myapplication_01.IStatus
 import com.example.myapplication_01.NotStartedStatus
 
@@ -14,6 +15,7 @@ class TimerViewModel : ViewModel() {
     var totalTime: Long by mutableStateOf(0L)
     var timeLeft: Long by mutableStateOf(0L)
     fun updateValue(text: String) {
+        if (status is CompletedStatus) status = NotStartedStatus(this)
         if (text.length > MAX_INPUT_LENGTH) return
         var value = text.replace("\\D".toRegex(),"")
         if(value.startsWith("0")) value = value.substring(1)

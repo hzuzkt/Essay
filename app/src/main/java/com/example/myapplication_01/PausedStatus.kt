@@ -9,4 +9,6 @@ class PausedStatus(private val viewModel: TimerViewModel) : IStatus {
     override fun clickStopButton() = viewModel.animatorController.stop()
     override fun showEditText() = false
     override fun progressSweepAngle() = viewModel.timeLeft * 1.0f / viewModel.totalTime * 360
+
+    override fun completedString() = ""
 }
